@@ -1,0 +1,28 @@
+
+.card {
+  border: 1px solid black;
+  margin: 2em;
+  padding: 3em;
+}
+
+.card:hover {
+  box-shadow: 4px 12px 20px 4px rgb(0, 0, 0);
+    transition: 0.3s; 
+}
+
+img {
+  height: 10em;
+}
+
+input {
+  padding: 15px;
+  color: #fff;
+  font-size: 15px;
+  background-color: #71cde4;
+  border: none;
+  margin: 1em;
+}
+
+span {
+  font-size: 1.7em;
+}

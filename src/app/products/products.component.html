@@ -1,0 +1,18 @@
+<div  class="container"  *ngFor="let product of products">
+    <div class="card">
+      <h1>Name: {{product.product_name}}</h1>
+      <br>
+      <p><span>Plant Description</span>: {{product.product_description}}</p>
+      <br>
+      <img src="{{product.product_image}}" >
+      <h2>Price: {{product.product_price}}</h2>
+      <br>
+      <h2>Id: {{product.id}}</h2>
+      <br>
+<!--       
+      <button type='submit' (submit)='deleteProduct($event)' id='{{product.id}}'>delete</button> -->
+      <form (submit)="deleteProduct($event)"> 
+        <input type="submit" id="{{ product.id }}" >
+    </form>
+    </div>
+
