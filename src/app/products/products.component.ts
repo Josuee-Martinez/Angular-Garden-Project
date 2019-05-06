@@ -35,34 +35,29 @@ export class ProductsComponent implements OnInit {
      
   //   // fetch('https://efa-gardenapp-backend.herokuapp.com/api/product').then(function(data) {
   //   //   console.log(data)
-  //   })
-
-    
+  //   })  
   // }
 
   ngOnInit() {
     this.productService.getProducts()
       .subscribe(data => 
-        // console.log(data)
         this.products = data
-        // console.log(this.products)
-        );
+      );
   }
 
   deleteProduct(e) {
     e.preventDefault();
-    var delID = e.target.elements[0].id;
-    var delUrl = `https://efa-gardenapp-backend.herokuapp.com/api/product/${delID}`;
+    var deleteId = e.target.elements[0].id;
+    var deleteUrl = `https://efa-gardenapp-backend.herokuapp.com/api/product/${deleteId}`;
     var token = sessionStorage.getItem('token');
-    console.log(token);
 
-    fetch(delUrl, {
+    fetch(deleteUrl, {
       method: 'DELETE',
       headers: new Headers({
         Authorization: token
       })
     }).then(response => response.json())
-      .then(json => { console.log(json)})
+      .then(json => console.log(json))
 
       .then(del =>
         this.productService.getProducts()
